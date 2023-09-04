@@ -6,7 +6,7 @@ export const meta: V2_MetaFunction = () => {
   return [
     { title: "Cluedo Notes" },
     {
-      name: "Digital Cluedo Notes",
+      name: "description",
       content:
         "This website allows you to insert your cluedo notes digitally to avoid looking for a piece of paper and a pen every time you want to play",
     },
