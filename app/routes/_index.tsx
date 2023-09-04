@@ -94,24 +94,14 @@ export default function Index() {
   const [buttons, setButtons] = useImmer(defaultButtons);
 
   return (
-    <div
-      className="p-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);",
-        backgroundSize: "400% 400%",
-        animation: "gradient 15s ease infinite",
-      }}
-    >
+    <div className="p-2 moving-background">
       <h1 className="text-3xl text-center py-4 font-bold text-white">
         Cluedo Digital Notes
       </h1>
       <div className="flex flex-col gap-4">
         {Object.entries(buttons).map(([section, sectionValue]) => (
-          <div key={section} className="rounded-lg p-2 glass">
-            <h4 className="text-2xl font-bold pb-4 text-purple-700">
-              {section}
-            </h4>
+          <div key={section} className="rounded-lg p-3 glass">
+            <h4 className="text-2xl font-bold pb-4 text-white">{section}</h4>
             <div className="flex flex-col gap-2 items-start w-full">
               {Object.entries(sectionValue).map(([key, { notes, value }]) => (
                 <div key={key} className="flex gap-4 justify-between w-full">
@@ -128,7 +118,7 @@ export default function Index() {
                     {key}
                   </button>
                   <input
-                    className="border border-black rounded py-1 pl-2"
+                    className="rounded py-1 pl-2 focus:outline-none"
                     type="text"
                     value={notes}
                     onChange={(e) => {
