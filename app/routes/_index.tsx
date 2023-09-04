@@ -54,11 +54,11 @@ interface BUTTON {
 const defaultValue = { notes: "", value: false };
 
 const defaultButtons: {
-  personaggi: { [name in KILLER_NAMES]: BUTTON };
-  armi: { [name in WEAPON_NAMES]: BUTTON };
-  stanze: { [name in ROOM_NAMES]: BUTTON };
+  Personaggi: { [name in KILLER_NAMES]: BUTTON };
+  Armi: { [name in WEAPON_NAMES]: BUTTON };
+  Stanze: { [name in ROOM_NAMES]: BUTTON };
 } = {
-  personaggi: {
+  Personaggi: {
     [KILLER_NAMES.MUSTARD]: defaultValue,
     [KILLER_NAMES.GREEN]: defaultValue,
     [KILLER_NAMES.PEACOCK]: defaultValue,
@@ -66,7 +66,7 @@ const defaultButtons: {
     [KILLER_NAMES.PLUMM]: defaultValue,
     [KILLER_NAMES.SCARLET]: defaultValue,
   },
-  armi: {
+  Armi: {
     [WEAPON_NAMES.ASCIA]: defaultValue,
     [WEAPON_NAMES.CANDELIERE]: defaultValue,
     [WEAPON_NAMES.COLTELLO]: defaultValue,
@@ -77,7 +77,7 @@ const defaultButtons: {
     [WEAPON_NAMES.TROFEO]: defaultValue,
     [WEAPON_NAMES.VELENO]: defaultValue,
   },
-  stanze: {
+  Stanze: {
     [ROOM_NAMES.CUCINA]: defaultValue,
     [ROOM_NAMES.DEPENDANCE]: defaultValue,
     [ROOM_NAMES.INGRESSO]: defaultValue,
@@ -107,7 +107,7 @@ export default function Index() {
                 <div key={key} className="flex gap-4 justify-between w-full">
                   <button
                     className={`${
-                      value ? "bg-red-400" : "bg-blue-400"
+                      value ? "bg-red-500" : "bg-blue-500"
                     } rounded p-2 text-white`}
                     onClick={() => {
                       setButtons((draft: any) => {
@@ -118,7 +118,7 @@ export default function Index() {
                     {key}
                   </button>
                   <input
-                    className="rounded py-1 pl-2 focus:outline-none"
+                    className="rounded py-1 pl-2 focus:outline-none w-1/2"
                     type="text"
                     value={notes}
                     onChange={(e) => {
@@ -132,6 +132,12 @@ export default function Index() {
             </div>
           </div>
         ))}
+        <div className="rounded-lg p-3 glass">
+          <h4 className="text-2xl font-bold pb-4 text-white">
+            Note aggiuntive
+          </h4>
+          <textarea className="rounded focus:outline-none py-1 pl-2 w-full h-32" />
+        </div>
       </div>
     </div>
   );
