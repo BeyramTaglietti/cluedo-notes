@@ -107,8 +107,10 @@ export default function Index() {
                 <div key={key} className="flex gap-4 justify-between w-full">
                   <button
                     className={`${
-                      value ? "bg-[#EC7505]" : "bg-[#FFF8F0] text-black"
-                    } rounded p-2 text-white`}
+                      value
+                        ? "bg-[#EC7505] text-white"
+                        : "bg-[#FFF8F0] text-black"
+                    } rounded p-2`}
                     onClick={() => {
                       setButtons((draft: any) => {
                         draft[section][key].value = !value;
