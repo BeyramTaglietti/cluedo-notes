@@ -94,20 +94,20 @@ export default function Index() {
   const [buttons, setButtons] = useImmer(defaultButtons);
 
   return (
-    <div className="p-2 moving-background">
+    <div className="p-2 bg-black">
       <h1 className="text-3xl text-center py-4 font-bold text-white">
         Cluedo Digital Notes
       </h1>
       <div className="flex flex-col gap-4">
         {Object.entries(buttons).map(([section, sectionValue]) => (
-          <div key={section} className="rounded-lg p-3 glass">
+          <div key={section} className="rounded-lg p-3 bg-primary">
             <h4 className="text-2xl font-bold pb-4 text-white">{section}</h4>
             <div className="flex flex-col gap-2 items-start w-full">
               {Object.entries(sectionValue).map(([key, { notes, value }]) => (
                 <div key={key} className="flex gap-4 justify-between w-full">
                   <button
                     className={`${
-                      value ? "bg-red-500" : "bg-blue-500"
+                      value ? "bg-[#EC7505]" : "bg-[#FFF8F0] text-black"
                     } rounded p-2 text-white`}
                     onClick={() => {
                       setButtons((draft: any) => {
@@ -132,11 +132,11 @@ export default function Index() {
             </div>
           </div>
         ))}
-        <div className="rounded-lg p-3 glass">
+        <div className="rounded-lg p-3 bg-primary">
           <h4 className="text-2xl font-bold pb-4 text-white">
             Note aggiuntive
           </h4>
-          <textarea className="rounded focus:outline-none py-1 pl-2 w-full h-32" />
+          <textarea className="rounded focus:outline-none py-1 pl-2 w-full h-56" />
         </div>
       </div>
     </div>
